@@ -4,7 +4,7 @@ const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const AWS = require('aws-sdk');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const config = {
   aws_config : {
@@ -44,6 +44,7 @@ app.listen(port, function (req, re) {
 
 // Get all doorbells
 app.get('/doorbells', (req, res) => {
+
   AWS.config.update(config.aws_config);
 
   const docClient = new AWS.DynamoDB.DocumentClient();
