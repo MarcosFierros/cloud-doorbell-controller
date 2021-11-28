@@ -42,6 +42,10 @@ app.listen(port, function (req, re) {
     console.log('listening on '+port)
 });
 
+app.get('/', (req, res) => {
+  res.send("API For managing doorbells")
+})
+
 // Get all doorbells
 app.get('/doorbells', (req, res) => {
 
